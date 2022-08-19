@@ -1,0 +1,12 @@
+{
+  "Author": "LittleNightmare",
+  "Name": "Sundering World",
+  "Punchline": "处理国区服务器问题",
+  "Description": "这是一个提供兼容性插件\n这个插件用来处理其他插件无法正常检查服务器列表的问题",
+  "InternalName": "Sundering World",
+  "AssemblyVersion": "0.0.0.1",
+  "DalamudApiLevel": 6,
+  "RepoUrl": "https://github.com/LittleNightmare/SunderingWorld",
+  "ApplicableVersion": "any",
+  "Tags": []
+}
