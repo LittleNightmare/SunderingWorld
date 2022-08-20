@@ -19,8 +19,8 @@ namespace SunderingWorld
         {
             pluginInterface.Create<Service>();
 
-            //Service.Configuration = Service.Interface.GetPluginConfig() as Configuration ?? new Configuration();
-            //Service.Configuration.Initialize();
+            Service.Configuration = Service.Interface.GetPluginConfig() as Configuration ?? new Configuration();
+            Service.Configuration.Initialize();
 
             //Service.PluginUI = new PluginUI();
 
