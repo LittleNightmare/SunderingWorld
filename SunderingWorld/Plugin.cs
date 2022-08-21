@@ -5,14 +5,16 @@ using Dalamud;
 using Lumina.Excel.GeneratedSheets;
 using Lumina.Text;
 using System.Collections.Generic;
+using Dalamud.Logging;
 
 namespace SunderingWorld
 {
     public sealed class Plugin : IDalamudPlugin
     {
-        public string Name => "Sundering World";
+        public string Name => "SunderingWorld";
 
         //private const string commandName = "/pmycommand";
+        internal bool NewerGameVersion = false;
 
         public Plugin(
             [RequiredVersion("1.0")] DalamudPluginInterface pluginInterface)
@@ -26,10 +28,25 @@ namespace SunderingWorld
 
             // Service.Interface.UiBuilder.Draw += DrawUI;
             //Service.Interface.UiBuilder.OpenConfigUi += DrawConfigUI;
-            
+            var gameVersiontext = Service.DataManager.GameData.Repositories.First(repo => repo.Key == "ffxiv").Value.Version;
             if (Service.DataManager.Language == ClientLanguage.ChineseSimplified)
             {
-                this.ReplaceDcAndWorlds();
+                if (new Dalamud.Game.GameVersion(gameVersiontext) <= new Dalamud.Game.GameVersion("2022.08.11.0000.0000"))
+                {
+                    NewerGameVersion = false;
+                    this.ReplaceDcAndWorlds();
+                }
+                else
+                {
+                    NewerGameVersion = true;
+                }
+            }
+            if (NewerGameVersion)
+            {
+#if DEBUG
+                PluginLog.Information($"当前游戏版本: {gameVersiontext}");
+#endif
+                Service.ChatGui.Print($"[{Name}] 发现新的游戏版本版本，请等待更新\n若已开启跨大区，理论上可以永久关闭本插件");
             }
         }
 

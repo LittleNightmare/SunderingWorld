@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Authors>LittleNightmare</Authors>
     <Company></Company>
-    <Version>0.0.0.2</Version>
+    <Version>0.0.0.3</Version>
     <Description>处理国区服务器问题</Description>
     <Copyright></Copyright>
     <PackageProjectUrl>https://github.com/LittleNightmare/SunderingWorld</PackageProjectUrl>

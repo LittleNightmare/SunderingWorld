@@ -20,5 +20,7 @@ namespace SunderingWorld
         internal static DalamudPluginInterface Interface { get; private set; } = null!;
         [PluginService]
         internal static DataManager DataManager { get; private set; } = null!;
+        [PluginService]
+        internal static ChatGui ChatGui { get; private set; } = null!;
     }
 }
