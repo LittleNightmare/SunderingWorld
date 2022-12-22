@@ -31,7 +31,7 @@ namespace SunderingWorld
             var gameVersiontext = Service.DataManager.GameData.Repositories.First(repo => repo.Key == "ffxiv").Value.Version;
             if (Service.DataManager.Language == ClientLanguage.ChineseSimplified)
             {
-                if (new Dalamud.Game.GameVersion(gameVersiontext) <= new Dalamud.Game.GameVersion("2022.11.01.0000.0000"))
+                if (new Dalamud.Game.GameVersion(gameVersiontext) <= new Dalamud.Game.GameVersion("2022.12.07.0000.0000"))
                 {
                     NewerGameVersion = false;
                     this.ReplaceDcAndWorlds();
