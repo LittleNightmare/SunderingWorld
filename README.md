@@ -1,5 +1,7 @@
 # SunderingWorld
 
+国服卫月[已经集成](https://github.com/ottercorp/Dalamud/commit/b9c193d13c1f65c9675b92798a83848519b05998)，本插件停止更新
+
 **CN only** plugin would casue problem on other server. DON't use it.
 
 本插件效仿海德林重新划分世界，让服务器真的成为了服务器
